@@ -269,6 +269,14 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--space-md);
+  grid-auto-rows: 1fr;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  min-height: 100%;
 }
 
 .card {
@@ -277,13 +285,10 @@ body {
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   transition: box-shadow 0.2s, border-color 0.2s;
-}
-
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
   height: 100%;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-link:hover .card {
@@ -313,6 +318,55 @@ body {
   font-size: 0.9375rem;
   color: var(--color-text-muted);
   line-height: 1.55;
+  flex: 1;
+}
+
+/* ----- About me ----- */
+.about-me {
+  padding: var(--space-2xl) 0;
+  background: #fff;
+  border-top: 1px solid var(--color-border);
+}
+
+.about-me-inner {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  max-width: 900px;
+}
+
+.about-me-photo {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 320px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-alt);
+}
+
+.about-me-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-me-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 0 0 var(--space-md);
+}
+
+.about-me-content p {
+  margin: 0 0 var(--space-md);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.about-me-content p:last-child {
+  margin-bottom: 0;
 }
 
 /* ----- About ----- */
@@ -549,5 +603,14 @@ body {
   .footer-inner {
     flex-direction: column;
     text-align: center;
+  }
+
+  .about-me-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-me-photo {
+    margin: 0 auto;
   }
 }
